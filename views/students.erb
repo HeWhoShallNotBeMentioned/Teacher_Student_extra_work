@@ -1,0 +1,14 @@
+<h1>Students</h1>
+
+<ul>
+<% @students.each() do |student| %>
+<li> <a href="/students/<%= student.id %>"><%= student.name() %> </a></li>
+<% end %>
+
+</ul>
+
+<form class="" action="/students/new" method="post">
+<label for="name"></label>
+<input type="text" name="name" id="name">
+<button type="submit">add new student</button>
+</form>

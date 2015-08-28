@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: teacher_development
+
+test:
+  adapter: postgresql
+  database: teacher_test

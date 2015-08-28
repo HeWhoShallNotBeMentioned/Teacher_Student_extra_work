@@ -1,0 +1,13 @@
+<h1>Teachers</h1>
+
+<ul>
+<% @teachers.each() do |teacher| %>
+<li> <a href="/teachers/<%= teacher.id %>"><%= teacher.name() %> </a></li>
+<% end %>
+
+</ul>
+<form class="" action="/teachers/new" method="post">
+<label for="name"></label>
+<input type="text" name="name" id="name">
+<button type="submit">add new teacher</button>
+</form>

@@ -1,0 +1,14 @@
+<%= @student.name %>
+
+<ul>
+<% @teachers.each() do |teacher| %>
+<li> <a href="/teachers/<%= teacher.id %>"><%= teacher.name() %> </a></li>
+<% end %>
+
+</ul>
+
+<form class="" action="/students/<%= @student.id %>/teachers/new" method="post">
+<label for="name">Teacher Name</label>
+<input type="text" name="name" id="name">
+<button type="submit">add teacher</button>
+</form>

@@ -1,0 +1,28 @@
+<%= @teacher.name %>
+
+<ul>
+<% @students.each() do |student| %>
+<li> <a href="/students/<%= student.id %>"><%= student.name() %> </a></li>
+<% end %>
+
+</ul>
+
+<form class="" action="/teachers/<%= @teacher.id %>/students/new" method="post">
+<label for="name">Student Name</label>
+<input type="text" name="name" id="name">
+<button type="submit">add student</button>
+</form>
+
+<form class="" action="/update_students" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="teacher_id" value="<%= @teacher.id %>">
+  <% @all_students.each() do |student| %>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" name="student_ids[]" value="<%= student.id() %>"><%= student.name() %>
+      </label>
+    </div>
+  <% end %>
+</br>
+  <button type="submit" >change students</button>
+</form>
